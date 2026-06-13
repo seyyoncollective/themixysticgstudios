@@ -1,0 +1,434 @@
+/* ========================================================
+   SERVICES SECTION — Cinematic, Editorial, Dark Theme
+   ======================================================== */
+
+/* ----- Section Container ----- */
+.services-section {
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  color: #ffffff;
+  user-select: none;
+  padding: 8rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .services-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-section {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* ----- Inner Container ----- */
+.services-container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+/* ----- Header Block ----- */
+.services-header {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  max-width: min(560px, 90vw);
+}
+
+@media (min-width: 1024px) {
+  .services-header {
+    margin-bottom: clamp(4rem, 8vw, 8rem);
+  }
+}
+
+
+
+.services-header__title {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .services-header__title {
+    font-size: 3.75rem;
+  }
+}
+
+.services-header__subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+/* ----- Grid Layout ----- */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+/* ----- Left Column (Cards) ----- */
+.services-cards {
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .services-cards {
+    order: 1;
+  }
+}
+
+@media (max-width: 1023px) {
+  .services-cards {
+    order: 2;
+  }
+}
+
+/* ----- Service Card ----- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 0;
+}
+
+.service-card:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    min-height: 70vh;
+    padding: 5rem 0;
+  }
+}
+
+/* ----- Service Title ----- */
+.service-card__title {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 1.875rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .service-card__title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-card__title {
+    font-size: 3.75rem;
+  }
+}
+
+/* ----- Service Description ----- */
+.service-card__desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 28rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .service-card__desc {
+    font-size: 1.125rem;
+  }
+}
+
+/* ----- Right Column (Sticky Frame) ----- */
+.services-visual {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .services-visual {
+    display: block;
+    position: sticky;
+    top: 15vh;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: #171717;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    order: 2;
+  }
+}
+
+/* ----- Image Wrapper (Parallax) ----- */
+.services-visual__track {
+  position: relative;
+  width: 100%;
+  height: 120%;
+}
+
+/* ----- Image Layer ----- */
+.services-visual__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ----- Vignette Overlay ----- */
+.services-visual__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.8) 0%,
+    transparent 50%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+}
+
+/* ----- Image ----- */
+.services-visual__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ----- Status Badge (ornamental) ----- */
+.services-visual__status {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-visual__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.services-visual__status-text {
+  font-size: 10px;
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ========================================================
+   VINYL RECORD — Decorative Background Accent
+   A half-visible rotating vinyl disc on the left edge
+   ======================================================== */
+
+.services-vinyl {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateX(-50%);
+  width: 520px;
+  height: 520px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.services-vinyl__disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(
+    circle at 38% 35%,
+    #2d2d2d 0%,
+    #1a1a1a 15%,
+    #111111 50%,
+    #0d0d0d 100%
+  );
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.7),
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 0 80px rgba(0, 0, 0, 0.3);
+  animation: vinylSpin 24s linear infinite;
+  will-change: transform;
+}
+
+/* Subtle surface texture — micro-grooves */
+.services-vinyl__disc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0px,
+    rgba(255, 255, 255, 0.02) 0.5px,
+    transparent 1px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.01) 3.2px,
+    transparent 3.5px
+  );
+  pointer-events: none;
+}
+
+/* Highlight sheen — subtle light reflection */
+.services-vinyl__disc::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.03) 15%,
+    transparent 35%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.02) 80%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Center label */
+.services-vinyl__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28%;
+  height: 28%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 35%,
+    #333333 0%,
+    #222222 40%,
+    #1a1a1a 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 2px 12px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* Spindle hole */
+.services-vinyl__hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18%;
+  height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #0a0a0a 40%, #1a1a1a 100%);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+/* Label ring accent */
+.services-vinyl__label::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+@keyframes vinylSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================================
+   VINYL — Responsive
+   ======================================================== */
+@media (max-width: 1280px) {
+  .services-vinyl {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-vinyl {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-vinyl {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-vinyl {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 374px) {
+  .services-vinyl {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* ========================================================
+   CARD TITLE — Small Screens
+   ======================================================== */
+@media (max-width: 480px) {
+  .service-card__title {
+    font-size: 1.625rem;
+  }
+}

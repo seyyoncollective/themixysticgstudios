@@ -1,0 +1,836 @@
+@import "tailwindcss";
+
+/* ========================================================
+   THE MIXYSTIC G STUDIOS — Design System & Hero Styles
+   A premium, cinematic, editorial-style landing page
+   ======================================================== */
+
+/* ----- RESET & BASE ----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0B0B0B;
+  color: #F3F0EA;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ----- COLOR TOKENS ----- */
+:root {
+  --bg-primary: #0B0B0B;
+  --bg-secondary: #151515;
+  --surface: #232323;
+  --text-primary: #F3F0EA;
+  --text-secondary: #B0A79D;
+  --divider: rgba(243, 240, 234, 0.08);
+  --shadow-rich: rgba(0, 0, 0, 0.85);
+
+  /* Gold palette */
+  --gold-dark: #8B6914;
+  --gold-mid: #C59530;
+  --gold: #D4AF37;
+  --gold-light: #E8C55A;
+  --gold-champagne: #F5D76E;
+  --gold-bright: #FAE27C;
+
+  /* Hero palette */
+  --hero-heading: #E8D9CA;
+  --hero-sub: #E1D3C0;
+  --bronze: #A07655;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-slow: 0.8s var(--ease-out-expo);
+  --transition-medium: 0.5s var(--ease-out-quart);
+  --transition-fast: 0.3s var(--ease-out-quart);
+}
+
+/* ========================================================
+   NAVIGATION
+   ======================================================== */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0;
+  transition: background-color 0.4s var(--ease-out-quart),
+              padding 0.4s var(--ease-out-quart);
+}
+
+/* ----- Glassy scrolled state ----- */
+.nav--scrolled .nav__inner {
+  background: rgba(11, 11, 11, 0.82);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom: 1px solid rgba(243, 240, 234, 0.06);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+  padding: 14px 48px;
+}
+
+.nav__inner {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 48px;
+  transition: background 0.5s var(--ease-out-quart),
+              padding 0.5s var(--ease-out-quart),
+              box-shadow 0.5s var(--ease-out-quart),
+              border 0.5s var(--ease-out-quart);
+}
+
+/* ----- Logo — always visible, absolute-left ----- */
+.nav__logo {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.nav__logo:hover {
+  opacity: 0.8;
+}
+
+.nav__logo-img {
+  display: block;
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .nav__logo-img {
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__logo-img {
+    height: 28px;
+  }
+}
+
+.nav__logo-mark {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+}
+
+.nav__logo-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--gold);
+  opacity: 0.5;
+}
+
+.nav__logo-text {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* ----- Toggle — hidden at top, visible on scroll, absolute-right ----- */
+.nav__toggle {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out-quart);
+}
+
+.nav--visible .nav__toggle {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav__toggle-line {
+  display: block;
+  width: 100%;
+  height: 1.2px;
+  background-color: var(--text-primary);
+  transition: transform 0.3s var(--ease-out-quart);
+}
+
+/* ----- Nav Links (Acoustic Wave) — centered, hidden at top ----- */
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-out-quart);
+}
+
+.nav--visible .nav__links {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.4s var(--ease-out-quart);
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+/* Acoustic wave shimmer overlay — gold gradient wave sweeps across text on hover */
+.nav__link::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    var(--gold-champagne) 35%,
+    var(--gold-light) 40%,
+    var(--gold-bright) 43%,
+    var(--gold-light) 46%,
+    var(--gold-champagne) 51%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.nav__link:hover::before {
+  opacity: 1;
+  animation: acousticWave 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+}
+
+@keyframes acousticWave {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ========================================================
+   HERO SECTION
+   ======================================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- Video Backdrop ----- */
+.hero__video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* ----- Dim Overlay (sits on top of video, below content) ----- */
+.hero__video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.40) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+/* ----- Hero Fallback (only shows while video loads) ----- */
+.hero__video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #0B0B0B;
+  z-index: 0;
+  opacity: 1;
+  transition: opacity 1s var(--ease-out-expo);
+}
+
+.hero__video-wrapper.video-loaded::after {
+  opacity: 0;
+}
+
+/* ----- Content Layout ----- */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
+.hero__content-inner {
+  max-width: 920px;
+  width: 100%;
+}
+
+/* ----- Studio Marker ----- */
+.hero__marker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--hero-heading);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: heroFadeIn 1s var(--ease-out-expo) 0.3s forwards;
+}
+
+/* ----- Headline ----- */
+.hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: heroFadeIn 1s var(--ease-out-expo) 0.5s forwards;
+}
+
+.hero__headline-line {
+  display: block;
+  font-size: clamp(48px, 10vw, 110px);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__headline-line--1 {
+  font-weight: 800;
+  color: var(--hero-heading);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.85);
+  -webkit-text-stroke: 2.0px var(--hero-heading);
+  text-shadow:
+    0 0 1px rgb(255, 255, 255),
+    0 0 6px rgba(4, 4, 4, 0.579);
+  letter-spacing: -0.02em;
+  font-size: clamp(52px, 11vw, 120px);
+}
+
+.hero__headline-line--2 {
+  font-weight: 700;
+  color: var(--hero-heading);
+}
+
+/* ----- Tagline ----- */
+.hero__tagline {
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 400;
+  color: var(--hero-sub);
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  animation: heroFadeIn 1s var(--ease-out-expo) 0.7s forwards;
+}
+
+
+/* ========================================================
+   GOLD METALLIC CTA BUTTONS
+   Inspired by the reference video — champagne gold with
+   a diagonal shimmer sweep that glides across the surface
+   ======================================================== */
+
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 80px;
+  opacity: 0;
+  animation: heroFadeIn 1s var(--ease-out-expo) 0.9s forwards;
+}
+
+/* ----- Base Button ----- */
+.gold-btn {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 42px;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 0.55s var(--ease-spring),
+    box-shadow 0.5s var(--ease-out-quart);
+  transform: translate(
+    calc(var(--mouse-x) * 3px),
+    calc(var(--mouse-y) * 3px)
+  );
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gold-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ----- Shimmer Sweep (shared) ----- */
+.gold-btn__shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.30) 35%,
+    rgba(255, 255, 255, 0.55) 42%,
+    rgba(255, 255, 255, 0.75) 45%,
+    rgba(255, 248, 240, 0.85) 48%,
+    rgba(255, 255, 255, 0.60) 51%,
+    rgba(255, 255, 255, 0.35) 55%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  animation: goldShimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  will-change: background-position;
+  z-index: 2;
+}
+
+/* ==================================================
+   CTA BUTTON — Bronze Outline
+   Transparent fill with bronze border + shimmer sweep
+   ================================================== */
+
+.gold-btn--secondary {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    inset 0 0 0 2px rgba(160, 118, 85, 0.40),
+    0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Bronze border — background layer peeking through */
+.gold-btn--secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--bronze);
+  z-index: -2;
+}
+
+/* Inner dark fill */
+.gold-btn--secondary::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 999px;
+  background: rgba(11, 11, 11, 0.90);
+  z-index: -1;
+}
+
+/* ----- Shared Content Layout ----- */
+.gold-btn__content {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gold-btn__arrow {
+  display: block;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+
+
+/* ========================================================
+   KEYFRAMES
+   ======================================================== */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 250% 0;
+  }
+  38% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ----- Trust Indicators ----- */
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  animation: heroFadeIn 1s var(--ease-out-expo) 1.1s forwards;
+}
+
+.hero__trust-item {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 217, 202, 0.80);
+}
+
+.hero__trust-separator {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: rgba(176, 167, 157, 0.3);
+}
+
+/* ----- Scroll Indicator ----- */
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+  animation: heroFadeIn 1s var(--ease-out-expo) 1.4s forwards;
+}
+
+.hero__scroll:hover {
+  opacity: 1;
+}
+
+.hero__scroll-arrow {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+/* ----- Parallax video effect container ----- */
+.hero__video-wrapper {
+  transform-origin: center center;
+}
+
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+
+@media (max-width: 768px) {
+  .nav__inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .nav--scrolled .nav__inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .nav__logo {
+    left: 24px;
+  }
+
+  .nav__toggle {
+    right: 24px;
+  }
+
+  .nav__links {
+    gap: 24px;
+  }
+
+  .hero__content {
+    padding: 0 24px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .hero__headline-line {
+    font-size: clamp(36px, 14vw, 60px);
+  }
+
+  .hero__headline-line--1 {
+    font-size: clamp(36px, 14vw, 60px);
+  }
+
+  .hero__headline {
+    gap: 2px;
+  }
+
+  .hero__tagline {
+    margin-bottom: 36px;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+
+  .gold-btn {
+    width: min(360px, 100%);
+    padding: 16px 32px;
+    font-size: 13px;
+  }
+
+  .hero__trust {
+    gap: 12px;
+  }
+
+  .hero__trust-separator {
+    display: none;
+  }
+
+  .hero__trust-item {
+    font-size: 10px;
+  }
+
+  .hero__scroll {
+    bottom: 28px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .nav__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav--scrolled .nav__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav__logo {
+    left: 20px;
+  }
+
+  .nav__toggle {
+    right: 20px;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .hero__content {
+    padding: 0 20px;
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
+
+  .hero__headline-line {
+    font-size: clamp(28px, 12vw, 42px);
+  }
+
+  .hero__headline-line--1 {
+    font-size: clamp(28px, 12vw, 42px);
+  }
+
+  .hero__marker {
+    font-size: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero__tagline {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .hero__ctas {
+    gap: 14px;
+  }
+
+  .gold-btn {
+    padding: 14px 28px;
+    font-size: 12px;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+
+}
+
+/* ----- Additional responsive refinements ----- */
+@media (max-width: 1024px) {
+  .nav__inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .nav__logo {
+    left: 40px;
+  }
+
+  .nav__toggle {
+    right: 40px;
+  }
+}
+
+@media (max-width: 834px) {
+  .nav__inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .nav__logo {
+    left: 32px;
+  }
+
+  .nav__toggle {
+    right: 32px;
+  }
+
+  .nav__links {
+    gap: 24px;
+  }
+
+  .hero__content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 374px) {
+  .hero {
+    min-height: 568px;
+  }
+
+  .hero__content {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+}

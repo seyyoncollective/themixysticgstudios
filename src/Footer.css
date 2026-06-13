@@ -1,0 +1,249 @@
+:root {
+  --bg-pure-black: #000000;
+  --text-pure-white: #ffffff;
+  --text-muted-gray: #8e8e93;
+  --system-green: #00e676;
+  --system-green-glow: rgba(0, 230, 118, 0.15);
+  --ui-surface-dark: #111111;
+  --ui-border-dark: #2c2c2e;
+  --ui-border-hover: #444446;
+  --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.master-footer {
+  position: relative;
+  background-color: var(--bg-pure-black);
+  color: var(--text-pure-white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 80px 24px 60px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.footer-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   SIGNATURE WATERMARK — SVG Path-Drawn Background Layer
+   ========================================================================== */
+.signature-watermark {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 225%;
+  max-width: 2100px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+  stroke: #B08D57;
+  filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(30%) opacity(0.25);
+}
+
+.signature-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+/* ==========================================================================
+   INTERFACE LAYOUT ARCHITECTURE
+   ========================================================================== */
+.footer-interface-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* --- Action Panel (Left Layout) --- */
+.action-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Operational Status Indicator */
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--system-green-glow);
+  color: var(--system-green);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  letter-spacing: -0.01em;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--system-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--system-green);
+}
+
+/* Book a Call Trigger Button */
+.cta-call-button {
+  display: inline-block;
+  background-color: var(--ui-surface-dark);
+  color: var(--text-pure-white);
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--ui-border-dark);
+  transition: all 0.25s var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta-call-button:hover {
+  background-color: #1c1c1e;
+  border-color: var(--ui-border-hover);
+  transform: translateY(-1px);
+}
+
+/* Circular Social Targets */
+.social-actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.action-circle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--text-muted-gray);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s var(--transition-smooth);
+}
+
+.action-circle-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.action-circle-icon:hover {
+  background-color: var(--ui-surface-dark);
+  border-color: var(--ui-border-dark);
+  color: var(--text-pure-white);
+}
+
+/* --- Navigation Panel (Right Layout) --- */
+.navigation-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.nav-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-nav-item {
+  color: var(--text-muted-gray);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  transition: color 0.2s var(--transition-smooth);
+  width: fit-content;
+}
+
+.footer-nav-item:hover {
+  color: var(--text-pure-white);
+}
+
+/* ==========================================================================
+   DEVELOPER CREDIT — Bottom Signature Line
+   ========================================================================== */
+.developer-credit {
+  margin-top: 100px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s var(--transition-smooth);
+}
+
+.credit-name {
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: color 0.3s var(--transition-smooth);
+}
+
+.developer-credit:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.developer-credit:hover .credit-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE (Mobile Breakdown)
+   ========================================================================= */
+@media (max-width: 768px) {
+  .signature-watermark {
+    width: 85%;
+    opacity: 0.06;
+  }
+
+  .footer-interface-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  
+
+  
+  .navigation-panel {
+    gap: 40px;
+  }
+
+  .developer-credit {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signature-watermark {
+    width: 95%;
+    opacity: 0.05;
+  }
+
+  .master-footer {
+    padding: 60px 16px 40px 16px;
+  }
+
+  .navigation-panel {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .developer-credit {
+    margin-top: 50px;
+    font-size: 12px;
+  }
+}

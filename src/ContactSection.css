@@ -1,0 +1,259 @@
+/* ========================================================
+   CONTACT / LET'S TALK SECTION  —  Premium Dark Theme
+   ======================================================== */
+
+/* ----- Section Wrapper ----- */
+.contact-section {
+  perspective: 1000px;
+}
+
+/* ----- Headline Container ----- */
+.contact-headline-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+/* ----- "Get in Touch" Foreground ----- */
+.contact-headline {
+  position: relative;
+  z-index: 10;
+  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(to bottom, #f4f4f5, #d4d4d8, #71717a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ----- "With Us" Depth Layer ----- */
+.contact-subtitle {
+  position: relative;
+  z-index: 0;
+  font-size: clamp(2.8rem, 9vw, 7rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #f4f4f5, #d4d4d8, #71717a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: -30px;
+  opacity: 0.18;
+  transform: translateY(10px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+}
+
+/* ----- Contact Cards Container ----- */
+.contact-cards-container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ========================================================
+   CONTACT CARD (Pill Button)
+   ======================================================== */
+
+.contact-card {
+  position: relative;
+  width: 85%;
+  height: 68px;
+  left: 55px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  border: 1.5px solid rgba(255, 160, 110, 0.55);
+  background: linear-gradient(
+    90deg,
+    rgba(55, 45, 40, 0.92) 0%,
+    rgba(75, 58, 48, 0.94) 45%,
+    rgba(155, 85, 48, 0.88) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(186, 186, 186, 0.25),
+    0 0 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 0.3s cubic-bezier(0, 0, 0.58, 1),
+    border-color 0.3s cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(180, 180, 180, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(191, 191, 190, 0.3),
+    0 0 40px rgba(255, 90, 30, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card:active {
+  transform: scale(0.98) translateY(-1px);
+}
+
+/* ----- Moving Highlight Sweep ----- */
+.contact-card-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact-card-sweep-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  opacity: 0.4;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: cardHighlight 9s ease-in-out infinite;
+}
+
+/* ----- Hover Glow Overlay ----- */
+.contact-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(255, 90, 30, 0.08);
+  transition: opacity 0.3s ease;
+}
+
+.contact-card:hover .contact-card-glow {
+  opacity: 1;
+}
+
+/* ----- Icon ----- */
+.contact-card-icon {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+}
+
+/* ----- Label Text ----- */
+.contact-card-label {
+  color: #F5F1EB;
+  font-weight: 500;
+  line-height: 1;
+  padding-left: 84px;
+  font-size: clamp(18px, 3vw, 28px);
+  letter-spacing: -0.02em;
+}
+
+/* ----- Bottom Branding Bar ----- */
+.contact-bottom-bar {
+  width: 100%;
+  max-width: 1445px;
+  padding: 0 32px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-bottom-text {
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   KEYFRAME — Card Highlight Sweep
+   ======================================================== */
+
+@keyframes cardHighlight {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
+
+@media (max-width: 768px) {
+  .contact-headline-wrapper {
+    margin-bottom: 60px;
+  }
+
+  .contact-cards-container {
+    gap: 24px;
+  }
+
+  .contact-card {
+    height: 76px;
+  }
+
+  .contact-card-icon {
+    left: 28px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact-card-label {
+    padding-left: 68px;
+  }
+
+  .contact-bottom-bar {
+    padding: 0 24px 24px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-headline-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .contact-cards-container {
+    gap: 18px;
+  }
+
+  .contact-card {
+    height: 68px;
+  }
+
+  .contact-card-icon {
+    left: 20px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-card-label {
+    padding-left: 54px;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .contact-bottom-bar {
+    padding: 0 20px 20px;
+  }
+}
