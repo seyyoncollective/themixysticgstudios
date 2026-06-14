@@ -352,7 +352,6 @@
   .services-vinyl {
     width: 420px;
     height: 420px;
-    transform: translateY(-50%) translateX(-25%);
   }
 }
 
@@ -360,7 +359,6 @@
   .services-vinyl {
     width: 340px;
     height: 340px;
-    transform: translateY(-50%) translateX(-15%);
   }
 }
 
