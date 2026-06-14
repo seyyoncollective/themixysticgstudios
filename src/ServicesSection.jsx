@@ -114,13 +114,9 @@ const ServicesSection = () => {
   return (
     <section ref={sectionContainerRef} className="services-section" id="services">
 
-      {/* Decorative Vinyl Record — Left edge accent */}
+      {/* Decorative Studio Logo — Left edge accent (replaces vinyl disc) */}
       <div className="services-vinyl" aria-hidden="true">
-        <div className="services-vinyl__disc">
-          <div className="services-vinyl__label">
-            <div className="services-vinyl__hole" />
-          </div>
-        </div>
+        <div className="services-vinyl__disc" />
       </div>
 
       {/* Editorial Header */}

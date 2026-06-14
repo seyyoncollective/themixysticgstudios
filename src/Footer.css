@@ -44,7 +44,7 @@
   z-index: 2;
   opacity: 1;
   stroke: #B08D57;
-  filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(30%) opacity(0.25);
+  filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(40%) opacity(0.28);
 }
 
 .signature-svg {
