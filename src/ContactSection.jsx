@@ -73,7 +73,7 @@ export default function ContactSection() {
   return (
     <section
       id="lets-talk"
-      className="contact-section relative min-h-screen w-full bg-[#000000] text-white flex flex-col justify-between items-center overflow-hidden select-none"
+      className="contact-section relative min-h-screen w-full text-white flex flex-col justify-between items-center overflow-hidden select-none"
     >
       {/* Top Spacer */}
       <div className="h-16 max-md:h-8 md:max-lg:h-10 w-full" />

@@ -241,12 +241,14 @@ export default function App() {
         </a>
       </section>
 
-      <PremiumCreativeStudioSection />
-      <ServicesSection />
-      <TrustedBySection />
-      <PortfolioSection />
-      <ContactSection />
-      <Footer />
+      <div className="content-wrapper">
+        <PremiumCreativeStudioSection />
+        <ServicesSection />
+        <TrustedBySection />
+        <PortfolioSection />
+        <ContactSection />
+        <Footer />
+      </div>
 
     </div>
   );

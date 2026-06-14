@@ -6,7 +6,7 @@
 .services-section {
   position: relative;
   width: 100%;
-  background: #0a0a0a;
+  background: transparent;
   color: #ffffff;
   user-select: none;
   padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 4vw, 1.5rem);

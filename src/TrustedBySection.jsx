@@ -117,7 +117,6 @@ export default function TrustedBySection() {
       role="region"
       aria-label="Clients and Collaborations"
       style={{
-        backgroundColor: cfg.backgroundColor,
         padding: cfg.sectionPadding,
         overflow: "hidden",
         display: "flex",

@@ -12,7 +12,7 @@
 
 .master-footer {
   position: relative;
-  background-color: var(--bg-pure-black);
+  background-color: transparent;
   color: var(--text-pure-white);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 80px 24px 60px 24px;

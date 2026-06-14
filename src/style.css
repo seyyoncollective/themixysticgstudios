@@ -28,6 +28,38 @@ body {
   overflow-x: hidden;
 }
 
+/* ========================================================
+   CONTINUOUS BACKGROUND WRAPPER — From 'Who We Are' to Footer
+   A single seamless background image behind all sections
+   ======================================================== */
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  /* Ensure content sits above the background */
+  z-index: 0;
+}
+
+/* Dark overlay to ensure text readability on any background image */
+.content-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* All direct children of the wrapper sit above the overlay */
+.content-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
 a {
   text-decoration: none;
   color: inherit;
