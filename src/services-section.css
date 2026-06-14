@@ -336,29 +336,31 @@
 
 @media (max-width: 1024px) {
   .services-vinyl {
-    width: 480px;
-    height: 480px;
+    width: 620px;
+    height: 620px;
   }
 }
 
 @media (max-width: 768px) {
   .services-vinyl {
-    width: 380px;
-    height: 380px;
+    width: 520px;
+    height: 520px;
   }
 }
 
 @media (max-width: 480px) {
   .services-vinyl {
-    width: 280px;
-    height: 280px;
+    width: 420px;
+    height: 420px;
+    transform: translateY(-50%) translateX(-25%);
   }
 }
 
 @media (max-width: 374px) {
   .services-vinyl {
-    width: 220px;
-    height: 220px;
+    width: 340px;
+    height: 340px;
+    transform: translateY(-50%) translateX(-15%);
   }
 }
 
