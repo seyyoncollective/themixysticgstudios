@@ -1,0 +1,5 @@
+dir: cannot access '/S': No such file or directory
+dir: cannot access '/B': No such file or directory
+dir: cannot access '*.mp4': No such file or directory
+dir: cannot access '*.jpeg': No such file or directory
+dir: cannot access '*.jpg': No such file or directory

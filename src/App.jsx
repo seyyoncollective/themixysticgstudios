@@ -169,7 +169,7 @@ export default function App() {
         <div className="hero__video-wrapper" ref={videoWrapperRef}>
           <video className="hero__video" autoPlay loop muted playsInline poster="" ref={videoRef}>
             <source
-              src="Hero section video/Firefly Transform this image into a luxury professional mixing and mastering console commercial. Ult.mp4"
+              src="/hero/hero-video.mp4"
               type="video/mp4"
             />
           </video>

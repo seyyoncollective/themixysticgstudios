@@ -31,25 +31,25 @@ export const servicesData = [
     id: "01",
     title: "Stereo Mixing",
     description: "Balancing every element into a cohesive, dynamic, release-ready stereo mix.",
-    imageUrl: "Services/Stereo Mixing pic.jpg.jpeg"
+    imageUrl: "/services/Stereo Mixing pic.jpg.jpeg"
   },
   {
     id: "02",
     title: "Mastering",
     description: "Final polish for streaming, broadcast, and physical release, meticulous to the last decibel.",
-    imageUrl: "Services/Mastering.jpg.jpeg"
+    imageUrl: "/services/Mastering.jpg.jpeg"
   },
   {
     id: "03",
     title: "Dolby Atmos Mixing",
     description: "Immersive spatial audio for cinema, premium streaming, and theatrical release.",
-    imageUrl: "Services/Dolby atmos Mixing.png"
+    imageUrl: "/services/Dolby atmos Mixing.png"
   },
   {
     id: "04",
     title: "Background Score",
     description: "Professional music mixing that brings out the emotion, energy, and detail in every performance.",
-    imageUrl: "Services/Background Score.png"
+    imageUrl: "/services/Background Score.png"
   }
 ];
 

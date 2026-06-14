@@ -25,21 +25,21 @@ const portfolioConfig = {
 };
 
 const portfolioItems = [
-  { id: 1, title: "Rowdy Baby", thumbnail: "Film vault/WhatsApp Image 2026-06-09 at 11.13.23 PM.jpeg", youtubeUrl: "https://youtu.be/x6Q7c9RyMzk?si=ZzaC4mYwwyk0Z-G-" },
-  { id: 2, title: "Ek Do Teen", thumbnail: "Film vault/Ek Do Teen.jpg.jpeg", youtubeUrl: "https://youtu.be/jfFimOpMS0E?si=T9XJ5JyYkLzDZTvV" },
-  { id: 3, title: "High on Love", thumbnail: "Film vault/High on Love.jpg.jpeg", youtubeUrl: "https://youtu.be/jp0n4TPfA5A?si=nQiiVL2XP_UT3iG3" },
-  { id: 4, title: "I'll be There for You", thumbnail: "Film vault/I'll be There for you.jpg.jpeg", youtubeUrl: "https://youtu.be/aXVZL8SfH24?si=zILMmcssqNHG1miz" },
-  { id: 5, title: "Idhu Varai", thumbnail: "Film vault/Idhu Varai.jpg.jpeg", youtubeUrl: "https://youtu.be/_-pdljs3KJA?si=SLk-BT7Fc-7IsHM1" },
-  { id: 6, title: "IOIO", thumbnail: "Film vault/IOIO.jpg.jpeg", youtubeUrl: "https://youtu.be/gYcY1yx9a54?si=Q5pfnfJH2FmBU8aY" },
-  { id: 7, title: "Maareesa", thumbnail: "Film vault/Maareesa.jpg.jpeg", youtubeUrl: "https://youtu.be/-mibr8igqGI?si=6kX-xT6d-gzRSnuz" },
-  { id: 8, title: "Maayam Neeyadi", thumbnail: "Film vault/Maayam Neeyadi.jpg.jpeg", youtubeUrl: "https://youtu.be/96EXf-6bmYY?si=5Z5rn5jKCtntCco3" },
-  { id: 9, title: "Machi Open the Bottle", thumbnail: "Film vault/Machi Open the Bottle.jpg.jpeg", youtubeUrl: "https://youtu.be/68ixlbMQaY0?si=otoFgdG0ie7unMDq" },
-  { id: 10, title: "Nanbane", thumbnail: "Film vault/Nanbane.jpg.jpeg", youtubeUrl: "https://youtu.be/vlzqE-JbLcw?si=Q-r9Kiuz3t320oT0" },
-  { id: 11, title: "Per Vechaalum Veikaama", thumbnail: "Film vault/Per Vechaalum Veikaama.jpg.jpeg", youtubeUrl: "https://youtu.be/-BUDo3mow00?si=qtsLNIjG2Is5waGy" },
-  { id: 12, title: "Thattiputta", thumbnail: "Film vault/Thattiputta.jpg.jpeg", youtubeUrl: "https://youtu.be/d_NnRgJJfqA?si=P8NCDiGK29YcTaR2" },
-  { id: 13, title: "Thuli Thuli", thumbnail: "Film vault/Thuli Thuli.jpg.jpeg", youtubeUrl: "https://youtu.be/_-pdljs3KJA?si=SLk-BT7Fc-7IsHM1" },
-  { id: 14, title: "Vaada Bin Laada", thumbnail: "Film vault/Vaada Bin Laada.jpg.jpeg", youtubeUrl: "https://youtu.be/TAv0fApr1js?si=do7WKqU2cTDZ7gBQ" },
-  { id: 15, title: "Yezhezhu Malai", thumbnail: "Film vault/Yezhezhu Malai.jpg.jpeg", youtubeUrl: "https://youtu.be/Xu4SReip1LY?si=4BWxaI8W9IErQZpL" },
+  { id: 1, title: "Rowdy Baby", thumbnail: "/portfolio/WhatsApp Image 2026-06-09 at 11.13.23 PM.jpeg", youtubeUrl: "https://youtu.be/x6Q7c9RyMzk?si=ZzaC4mYwwyk0Z-G-" },
+  { id: 2, title: "Ek Do Teen", thumbnail: "/portfolio/Ek Do Teen.jpg.jpeg", youtubeUrl: "https://youtu.be/jfFimOpMS0E?si=T9XJ5JyYkLzDZTvV" },
+  { id: 3, title: "High on Love", thumbnail: "/portfolio/High on Love.jpg.jpeg", youtubeUrl: "https://youtu.be/jp0n4TPfA5A?si=nQiiVL2XP_UT3iG3" },
+  { id: 4, title: "I'll be There for You", thumbnail: "/portfolio/I'll be There for you.jpg.jpeg", youtubeUrl: "https://youtu.be/aXVZL8SfH24?si=zILMmcssqNHG1miz" },
+  { id: 5, title: "Idhu Varai", thumbnail: "/portfolio/Idhu Varai.jpg.jpeg", youtubeUrl: "https://youtu.be/_-pdljs3KJA?si=SLk-BT7Fc-7IsHM1" },
+  { id: 6, title: "IOIO", thumbnail: "/portfolio/IOIO.jpg.jpeg", youtubeUrl: "https://youtu.be/gYcY1yx9a54?si=Q5pfnfJH2FmBU8aY" },
+  { id: 7, title: "Maareesa", thumbnail: "/portfolio/Maareesa.jpg.jpeg", youtubeUrl: "https://youtu.be/-mibr8igqGI?si=6kX-xT6d-gzRSnuz" },
+  { id: 8, title: "Maayam Neeyadi", thumbnail: "/portfolio/Maayam Neeyadi.jpg.jpeg", youtubeUrl: "https://youtu.be/96EXf-6bmYY?si=5Z5rn5jKCtntCco3" },
+  { id: 9, title: "Machi Open the Bottle", thumbnail: "/portfolio/Machi Open the Bottle.jpg.jpeg", youtubeUrl: "https://youtu.be/68ixlbMQaY0?si=otoFgdG0ie7unMDq" },
+  { id: 10, title: "Nanbane", thumbnail: "/portfolio/Nanbane.jpg.jpeg", youtubeUrl: "https://youtu.be/vlzqE-JbLcw?si=Q-r9Kiuz3t320oT0" },
+  { id: 11, title: "Per Vechaalum Veikaama", thumbnail: "/portfolio/Per Vechaalum Veikaama.jpg.jpeg", youtubeUrl: "https://youtu.be/-BUDo3mow00?si=qtsLNIjG2Is5waGy" },
+  { id: 12, title: "Thattiputta", thumbnail: "/portfolio/Thattiputta.jpg.jpeg", youtubeUrl: "https://youtu.be/d_NnRgJJfqA?si=P8NCDiGK29YcTaR2" },
+  { id: 13, title: "Thuli Thuli", thumbnail: "/portfolio/Thuli Thuli.jpg.jpeg", youtubeUrl: "https://youtu.be/_-pdljs3KJA?si=SLk-BT7Fc-7IsHM1" },
+  { id: 14, title: "Vaada Bin Laada", thumbnail: "/portfolio/Vaada Bin Laada.jpg.jpeg", youtubeUrl: "https://youtu.be/TAv0fApr1js?si=do7WKqU2cTDZ7gBQ" },
+  { id: 15, title: "Yezhezhu Malai", thumbnail: "/portfolio/Yezhezhu Malai.jpg.jpeg", youtubeUrl: "https://youtu.be/Xu4SReip1LY?si=4BWxaI8W9IErQZpL" },
 ];
 
 /**
