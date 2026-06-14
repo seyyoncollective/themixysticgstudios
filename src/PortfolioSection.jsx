@@ -298,9 +298,9 @@ export default function PortfolioSection() {
   const hZ = Math.round(portfolioConfig.hoverTranslateZ * cardScale);
 
   return (
-    <section id="listen" className="w-full min-h-screen bg-black py-24 overflow-hidden flex flex-col justify-center select-none">
+    <section id="listen" className="w-full min-h-screen bg-black py-24 max-md:py-10 md:max-lg:py-14 overflow-hidden flex flex-col justify-center select-none">
       {/* Editorial Luxury Header System */}
-      <div className="w-full px-8 mb-64">
+      <div className="w-full px-8 mb-64 max-md:mb-16 md:max-lg:mb-32">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

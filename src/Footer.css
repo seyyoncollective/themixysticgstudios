@@ -224,11 +224,6 @@
 }
 
 @media (max-width: 834px) {
-  .signature-watermark {
-    width: 90%;
-    opacity: 0.06;
-  }
-
   .master-footer {
     padding: 64px 40px 48px 40px;
   }
@@ -243,11 +238,6 @@
 }
 
 @media (max-width: 768px) {
-  .signature-watermark {
-    width: 85%;
-    opacity: 0.06;
-  }
-
   .master-footer {
     padding: 64px 40px 48px 40px;
   }
@@ -268,8 +258,14 @@
 
 @media (max-width: 480px) {
   .signature-watermark {
-    width: 95%;
-    opacity: 0.05;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 85%;
+    max-width: 800px;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(40%) opacity(0.4);
   }
 
   .master-footer {
@@ -281,7 +277,7 @@
   }
 
   .navigation-panel {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
 
@@ -292,12 +288,28 @@
 }
 
 @media (max-width: 375px) {
+  .signature-watermark {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 80%;
+    max-width: 700px;
+    opacity: 0.12;
+    filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(40%) opacity(0.4);
+  }
+
   .master-footer {
     padding: 48px 20px 32px 20px;
   }
 
   .footer-interface-grid {
     gap: 32px;
+  }
+
+  .navigation-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
   .cta-call-button {
@@ -326,12 +338,28 @@
 }
 
 @media (max-width: 320px) {
+  .signature-watermark {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 75%;
+    max-width: 600px;
+    opacity: 0.1;
+    filter: drop-shadow(0 0 1px #B08D57) grayscale(100%) brightness(40%) opacity(0.4);
+  }
+
   .master-footer {
     padding: 40px 16px 28px 16px;
   }
 
   .footer-interface-grid {
     gap: 28px;
+  }
+
+  .navigation-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .live-status-badge {

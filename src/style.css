@@ -887,8 +887,8 @@ button {
   }
 
   .hero__trust {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 8px;
   }
 
@@ -969,6 +969,8 @@ button {
   }
 
   .hero__trust {
+    flex-direction: column;
+    align-items: center;
     gap: 6px;
   }
 
@@ -1039,6 +1041,12 @@ button {
   .gold-btn {
     padding: 10px 20px;
     font-size: 10px;
+  }
+
+  .hero__trust {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
   }
 
   .hero__trust-item {

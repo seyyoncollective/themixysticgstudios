@@ -200,6 +200,24 @@
    RESPONSIVE
    ======================================================== */
 
+/* ----- Tablet-Only: Brighter Headlines ----- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-headline {
+    background: linear-gradient(to bottom, #ffffff, #f4f4f5, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .contact-subtitle {
+    opacity: 0.35;
+    background: linear-gradient(to bottom, #ffffff, #f4f4f5, #a1a1aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
 @media (max-width: 1024px) {
   .contact-cards-container {
     padding: 0 40px;
