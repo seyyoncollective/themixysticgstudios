@@ -182,7 +182,7 @@ const PremiumCreativeStudioSection = () => {
         width: '100%',
         maxWidth: '100%',
         margin: '0 auto',
-        padding: 'clamp(2.5rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem) clamp(3rem, 7vw, 6rem)',
+        padding: 'clamp(2.5rem, 6vw, 4rem) clamp(1rem, 5vw, 5rem) clamp(3rem, 7vw, 6rem)',
         background: 'transparent',
         display: 'flex',
         flexDirection: 'column',

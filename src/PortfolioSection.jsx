@@ -276,9 +276,13 @@ export default function PortfolioSection() {
     const updateScale = () => {
       const w = window.innerWidth;
       let s = 1;
-      if (w < 480) s = 0.35;
-      else if (w < 768) s = 0.5;
-      else if (w < 1024) s = 0.7;
+      if (w < 320) s = 0.3;
+      else if (w < 375) s = 0.35;
+      else if (w < 480) s = 0.4;
+      else if (w < 768) s = 0.55;
+      else if (w < 834) s = 0.65;
+      else if (w < 1024) s = 0.75;
+      else if (w < 1280) s = 0.85;
       setCardScale(s);
     };
     updateScale();

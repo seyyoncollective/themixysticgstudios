@@ -226,10 +226,27 @@ export default function TrustedBySection() {
           flex-direction: row;
         }
 
+        @media (max-width: 1280px) {
+          .trusted-logos-grid-engine {
+            gap: 3.5rem;
+          }
+        }
+
         @media (max-width: 1024px) {
           .trusted-logos-grid-engine {
             gap: ${cfg.logoGapTablet};
             max-width: 90%;
+          }
+        }
+
+        @media (max-width: 834px) {
+          .trusted-logos-grid-engine {
+            gap: 2.5rem;
+          }
+          
+          .trusted-logos-grid-engine > div {
+            width: 140px !important;
+            height: 56px !important;
           }
         }
 
@@ -245,6 +262,22 @@ export default function TrustedBySection() {
           .trusted-logos-grid-engine > div {
             width: 100% !important;
             height: 72px !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .trusted-logos-grid-engine > div {
+            height: 60px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .trusted-logos-grid-engine {
+            gap: 1.25rem;
+          }
+          
+          .trusted-logos-grid-engine > div {
+            height: 50px !important;
           }
         }
       `}</style>

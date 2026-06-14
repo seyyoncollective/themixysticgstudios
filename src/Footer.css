@@ -203,21 +203,60 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE LAYOUT ENGINE (Mobile Breakdown)
+   RESPONSIVE LAYOUT ENGINE
    ========================================================================= */
+@media (max-width: 1024px) {
+  .master-footer {
+    padding: 72px 40px 52px 40px;
+  }
+
+  .footer-interface-grid {
+    gap: 40px;
+  }
+
+  .action-panel {
+    gap: 18px;
+  }
+
+  .navigation-panel {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 834px) {
+  .signature-watermark {
+    width: 90%;
+    opacity: 0.06;
+  }
+
+  .master-footer {
+    padding: 64px 40px 48px 40px;
+  }
+
+  .navigation-panel {
+    gap: 24px;
+  }
+
+  .developer-credit {
+    margin-top: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   .signature-watermark {
     width: 85%;
     opacity: 0.06;
   }
 
+  .master-footer {
+    padding: 64px 40px 48px 40px;
+  }
+
   .footer-interface-grid {
     grid-template-columns: 1fr;
-    gap: 56px;
+    gap: 48px;
   }
-  
 
-  
   .navigation-panel {
     gap: 40px;
   }
@@ -234,7 +273,11 @@
   }
 
   .master-footer {
-    padding: 60px 16px 40px 16px;
+    padding: 60px 24px 40px 24px;
+  }
+
+  .footer-interface-grid {
+    gap: 40px;
   }
 
   .navigation-panel {
@@ -245,5 +288,83 @@
   .developer-credit {
     margin-top: 50px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .master-footer {
+    padding: 48px 20px 32px 20px;
+  }
+
+  .footer-interface-grid {
+    gap: 32px;
+  }
+
+  .cta-call-button {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  .action-circle-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .action-circle-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-nav-item {
+    font-size: 14px;
+  }
+
+  .developer-credit {
+    margin-top: 40px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 320px) {
+  .master-footer {
+    padding: 40px 16px 28px 16px;
+  }
+
+  .footer-interface-grid {
+    gap: 28px;
+  }
+
+  .live-status-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cta-call-button {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  .action-circle-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .action-circle-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-nav-item {
+    font-size: 13px;
+  }
+
+  .developer-credit {
+    margin-top: 32px;
+    font-size: 10px;
   }
 }
